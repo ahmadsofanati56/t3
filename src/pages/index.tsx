@@ -19,7 +19,7 @@ export default function Home() {
       <div className="flex felx-col">
         <div className="flex text-slate-300 gap-2 font-bold">
           <span>{`@${author.username}`}</span>
-          <span className="font-thin">{`  . ${dayjs(post.createdAt).fromNow()}`}</span>
+          <span className="font-thin">{`hello`}</span>
 
           </div>
           <span>{post.content}</span>
@@ -58,7 +58,7 @@ export default function Home() {
       {user.isSignedIn && <CreatePostWizard/>} 
       </div>
       <div className="flex flex-col">
-        {[...data!]?.map((fullPost)=> (<PostView {...fullPost} key={fullPost.post.id}/>))}
+        {...data!?.map((fullPost)=> (<PostView {...fullPost} key={fullPost.post.id}/>))}
       </div>
       </div>
       </main>
