@@ -10,23 +10,23 @@ import dayjs from "dayjs";
 
 export default function Home() {
   type PostWithUser = RouterOutputs["posts"]["getAll"][number];
-  // const PostView = (props: PostWithUser)=> {
-  //   const {post, author} = props;
-  //   return (
-  //     <div key={post.id} className="flex p-4 border-b border-slate-400 gap-3">
-  //     <img src={author.profileImageUrl} alt="Profile Image" className="w-14 h-14 rounded-full" /> 
-  //     <div className="flex felx-col">
-  //       <div className="flex text-slate-300 gap-2 font-bold">
-  //         {/* <span>{`@${author.username}`}</span> */}
-  //         {/* <span className="font-thin">{`hello`}</span> */}
+  const PostView = (props: PostWithUser)=> {
+    const {post, author} = props;
+    return (
+      <div key={post.id} className="flex p-4 border-b border-slate-400 gap-3">
+      <img src={author.profileImageUrl} alt="Profile Image" className="w-14 h-14 rounded-full" /> 
+      <div className="flex felx-col">
+        <div className="flex text-slate-300 gap-2 font-bold">
+          {/* <span>{`@${author.username}`}</span> */}
+          {/* <span className="font-thin">{`hello`}</span> */}
 
-  //         </div>
-  //         <span>{post.content}</span>
-  //     </div>
-  //     </div>
+          </div>
+          <span>{post.content}</span>
+      </div>
+      </div>
     
-  //   ) 
-  // }
+    ) 
+  }
   const user = useUser();
   const {data ,isLoading} = api.posts.getAll.useQuery();
 
@@ -56,9 +56,9 @@ export default function Home() {
 
       {user.isSignedIn && <CreatePostWizard/>} 
       </div>
-      <div className="flex flex-col">
+      {/* <div className="flex flex-col">
         {...data!?.map((fullPost)=> (<PostView {...fullPost} key={fullPost.post.id}/>))}
-      </div>
+      </div> */}
       </div>
       </main>
     </>
