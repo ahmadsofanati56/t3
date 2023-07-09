@@ -17,8 +17,8 @@ export default function Home() {
       <img src={author.profileImageUrl} alt="Profile Image" className="w-14 h-14 rounded-full" /> 
       <div className="flex felx-col">
         <div className="flex text-slate-300 gap-2 font-bold">
-          <span>{`@${author.username}`}</span> 
-           <span className="font-thin">{`hello`}</span>
+          {/* <span>{`@${author.username}`}</span> 
+           <span className="font-thin">{`hello`}</span> */}
 
           </div>
           <span>{post.content}</span>
