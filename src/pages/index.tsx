@@ -56,9 +56,9 @@ export default function Home() {
 
       {user.isSignedIn && <CreatePostWizard/>} 
       </div>
-      {/* <div className="flex flex-col">
-        {...data!?.map((fullPost)=> (<PostView {...fullPost} key={fullPost.post.id}/>))}
-      </div> */}
+      <div className="flex flex-col">
+        {[...data!]?.map((fullPost)=> (<PostView {...fullPost} key={fullPost.post.id}/>))}
+      </div>
       </div>
       </main>
     </>
