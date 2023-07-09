@@ -5,7 +5,6 @@ import Link from "next/link";
 import { RouterOutputs, api } from "y/utils/api";
 import relativeTime from "dayjs/plugin/relativeTime";
 import dayjs from "dayjs";
-dayjs.extend(relativeTime)
 
 
 
